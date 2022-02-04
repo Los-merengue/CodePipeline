@@ -1,3 +1,5 @@
+# Provisioning Role for the Pipeline
+
 resource "aws_iam_role" "tf-codepipeline-role" {
   name = "tf-codepipeline-role"
 
@@ -18,6 +20,8 @@ resource "aws_iam_role" "tf-codepipeline-role" {
 EOF
 
 }
+
+# Policy Document for the ci-cd Pipeline 
 
 data "aws_iam_policy_document" "tf-cicd-pipeline-policies" {
     statement{
@@ -46,6 +50,7 @@ resource "aws_iam_role_policy_attachment" "tf-cicd-pipeline-attachment" {
     role = aws_iam_role.tf-codepipeline-role.id
 }
 
+# Provisioning Role for CodeBuild 
 
 resource "aws_iam_role" "tf-codebuild-role" {
   name = "tf-codebuild-role"
@@ -67,6 +72,8 @@ resource "aws_iam_role" "tf-codebuild-role" {
 EOF
 
 }
+
+# Policy for the CodeBuild
 
 data "aws_iam_policy_document" "tf-cicd-build-policies" {
     statement{
@@ -90,6 +97,6 @@ resource "aws_iam_role_policy_attachment" "tf-cicd-codebuild-attachment1" {
 }
 
 resource "aws_iam_role_policy_attachment" "tf-cicd-codebuild-attachment2" {
-    policy_arn  = "arn:aws:iam::aws:policy/PowerUserAccess"
+    policy_arn  = "arn:aws:iam::aws:policy/PowerUserAccess" # Include the ARN as it applies
     role        = aws_iam_role.tf-codebuild-role.id
 }

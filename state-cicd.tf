@@ -1,3 +1,5 @@
+# Provisioning an S3 bucket that would give the state(versioning) of the code
+
 terraform{
     backend "s3" {
         bucket = "735353624204-codepipeline"

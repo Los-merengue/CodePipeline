@@ -1,3 +1,5 @@
+
+
 resource "aws_codebuild_project" "tf-plan" {
   name          = "tf-cicd-plan2"
   description   = "Plan stage for terraform"
@@ -9,7 +11,7 @@ resource "aws_codebuild_project" "tf-plan" {
 
   environment {
     compute_type                = "BUILD_GENERAL1_SMALL"
-    image                       = ##Container for dockerhub
+    image                       = ##Container from dockerhub
     type                        = "LINUX_CONTAINER"
     image_pull_credentials_type = "SERVICE_ROLE"
     registry_credential{

@@ -16,6 +16,6 @@ From the diagram given in this repo, a github profile would trigger the CI/CD co
 
 - DockerHub Credentials: To download images that would be used during codebuild
 - CodeStar Connector credentials : This would be used to connect to the github account
-The ARN credentials of this variables will be included in the terraform.tfvars file
+The ARN credentials of these variables will be included in the terraform.tfvars file
 
-Within the pipeline-cicd.tf file there is variable 'image' used to create the docker image, this variable should align with the version of the terraform that you have installed
+Within the pipeline-cicd.tf file there is variable 'image' used to create the docker image, these variable should align with the version of the terraform that you have installed

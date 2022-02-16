@@ -1,4 +1,5 @@
 # Provisioning an S3 bucket that would give the state(versioning) of the code
+# This s3 bucket was created manually and it would carry the tfstate file of the terraform config
 
 terraform{
     backend "s3" {
